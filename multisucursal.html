@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Ventas Multisucursal</title>
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #0f172a;
+      --accent: #38bdf8;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(120deg, #020617, #020617 50%, #020617);
+      color: var(--text);
+    }
+
+    header {
+      padding: 3rem 1.5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeDown 1s ease;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: .5rem;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 800px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    section {
+      margin-top: 3rem;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card), #020617);
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,.4);
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .img-card {
+      background: #020617;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,.4);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp .8s ease forwards;
+    }
+
+    .img-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .img-card span {
+      display: block;
+      padding: .8rem 1rem;
+      font-size: .9rem;
+      color: var(--muted);
+      background: #020617;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @keyframes fadeUp {
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sistema de Ventas Multisucursal con Tienda Virtual</h1>
+  <p>
+    Sistema web orientado a pequeñas y medianas empresas para la gestión de ventas,
+    almacén y clientes, extendido y adaptado a múltiples sucursales y venta online.
+  </p>
+</header>
+
+<main>
+
+  <section>
+    <h2>🧠 Descripción General</h2>
+    <div class="card">
+      <p>
+        Este sistema fue desarrollado a partir de una base inicial en PHP,
+        la cual fue modificada y ampliada para cubrir nuevos escenarios de negocio.
+        El enfoque principal fue mejorar la flexibilidad del sistema,
+        permitiendo operar múltiples sucursales y distintos tipos de venta.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>⚙️ Funcionalidades Implementadas</h2>
+    <div class="card">
+      <ul>
+        <li>Gestión de ventas por sucursal</li>
+        <li>Precios diferenciados: por menor y por mayor</li>
+        <li>Ventas al contado y ventas al crédito</li>
+        <li>Módulo de tienda virtual</li>
+        <li>Registro de notas personalizadas por venta</li>
+        <li>Edición, eliminación y visualización de registros</li>
+        <li>Rediseño completo del ticket de venta</li>
+        <li>Mejoras en interfaz y experiencia de usuario</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>🖼️ Cambios Visuales y Mejoras</h2>
+    <div class="gallery">
+
+      <div class="img-card">
+        <img src="assets/imgs/venta-mayor-menor.png" alt="Venta por mayor y menor">
+        <span>Implementación de precios diferenciados (mayor y menor).</span>
+      </div>
+
+      <div class="img-card">
+        <img src="assets/imgs/tienda-virtual.png" alt="Tienda virtual">
+        <span>Módulo de tienda virtual integrado al sistema.</span>
+      </div>
+
+      <div class="img-card">
+        <img src="assets/imgs/credito-contado.png" alt="Ventas al crédito y contado">
+        <span>Soporte para ventas al crédito y al contado.</span>
+      </div>
+
+      <div class="img-card">
+        <img src="assets/imgs/ticket.png" alt="Ticket profesional">
+        <span>Rediseño del ticket de venta con formato profesional.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>🛠️ Tecnologías Utilizadas</h2>
+    <div class="card">
+      <ul>
+        <li>PHP</li>
+        <li>MySQL</li>
+        <li>jQuery</li>
+        <li>AJAX</li>
+        <li>HTML5 / CSS3</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 – Documentación de proyecto | Portafolio técnico
+</footer>
+
+</body>
+</html>
