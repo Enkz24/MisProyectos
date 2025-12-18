@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de Tickets SUNAT desde XML</title>
+
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #0f172a;
+      --accent: #38bdf8;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(120deg, #020617, #020617);
+      color: var(--text);
+    }
+
+    header {
+      padding: 3rem 1.5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeDown 1s ease;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: .5rem;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 900px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    section {
+      margin-top: 3rem;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card), #020617);
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,.4);
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    ul { padding-left: 1.2rem; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .img-card {
+      background: #020617;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,.4);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp .8s ease forwards;
+    }
+
+    .img-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .img-card span {
+      display: block;
+      padding: .8rem 1rem;
+      font-size: .9rem;
+      color: var(--muted);
+      background: #020617;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @keyframes fadeUp {
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Generador Profesional de Tickets desde XML SUNAT</h1>
+  <p>
+    Sistema desarrollado completamente desde cero en Python para convertir
+    comprobantes electrónicos SUNAT (XML) en tickets de impresión profesional,
+    integrando logo, formato comercial y estructura optimizada para impresoras térmicas.
+  </p>
+</header>
+
+<main>
+
+  <section>
+    <h2>Descripción del Sistema</h2>
+    <div class="card">
+      <p>
+        Este sistema fue desarrollado desde cero con el objetivo de transformar
+        archivos XML generados por facturas y boletas electrónicas de SUNAT
+        en tickets visuales listos para impresión.
+      </p>
+      <p>
+        El sistema interpreta la estructura XML, extrae los datos fiscales,
+        los procesa y genera una imagen final del ticket con diseño profesional,
+        adaptado a impresoras térmicas utilizadas en comercios.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>⚙️ Flujo de Funcionamiento</h2>
+    <div class="card">
+      <ul>
+        <li>Recepción del archivo XML de factura o boleta electrónica</li>
+        <li>Lectura y validación de la estructura XML SUNAT</li>
+        <li>Extracción de datos fiscales y comerciales</li>
+        <li>Procesamiento y ordenamiento de la información</li>
+        <li>Generación de imagen del ticket con formato profesional</li>
+        <li>Preparación del ticket para impresión térmica</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Características Destacadas</h2>
+    <div class="card">
+      <ul>
+        <li>Conversión de XML SUNAT a imagen de ticket</li>
+        <li>Compatibilidad con facturas y boletas electrónicas</li>
+        <li>Integración de logotipo de la empresa</li>
+        <li>Diseño profesional y legible</li>
+        <li>Optimización para impresoras térmicas</li>
+        <li>Alineación correcta de montos, impuestos y totales</li>
+        <li>Adaptable a distintos formatos comerciales</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Evidencia Visual</h2>
+    <div class="gallery">
+
+      <div class="img-card">
+        <img src="assets/imgs/ticket-xml.png" alt="XML procesado">
+        <span>Lectura y procesamiento del archivo XML SUNAT.</span>
+      </div>
+
+      <div class="img-card">
+        <img src="assets/imgs/ticket-imagen.png" alt="Ticket generado">
+        <span>Ticket generado como imagen con diseño profesional.</span>
+      </div>
+
+      <div class="img-card">
+        <img src="assets/imgs/ticket-logo.png" alt="Logo integrado">
+        <span>Integración de logotipo y datos comerciales.</span>
+      </div>
+
+      <div class="img-card">
+        <img src="assets/imgs/ticket-impresion.png" alt="Impresión térmica">
+        <span>Optimización del formato para impresión térmica.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Tecnologías Utilizadas</h2>
+    <div class="card">
+      <ul>
+        <li>Python</li>
+        <li>Procesamiento XML</li>
+        <li>Generación de imágenes</li>
+        <li>Diseño de formatos de impresión</li>
+        <li>Integración con sistemas de facturación electrónica</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 – Sistema desarrollado desde cero | Portafolio técnico
+</footer>
+
+</body>
+</html>
