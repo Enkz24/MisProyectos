@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema POS para Farmacias y Mayoristas</title>
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #0f172a;
+      --accent: #4ade80;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(120deg, #020617, #020617 50%, #020617);
+      color: var(--text);
+    }
+
+    header {
+      padding: 3rem 1.5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeDown 1s ease;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: .5rem;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 850px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    section {
+      margin-top: 3rem;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card), #020617);
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,.4);
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .img-card {
+      background: #020617;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,.4);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp .8s ease forwards;
+    }
+
+    .img-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .img-card span {
+      display: block;
+      padding: .8rem 1rem;
+      font-size: .9rem;
+      color: var(--muted);
+      background: #020617;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @keyframes fadeUp {
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sistema POS para Farmacias y Mayoristas</h1>
+  <p>
+    Sistema de punto de venta adaptado completamente para farmacias y
+    tiendas mayoristas de abarrotes, enfocado en control de productos,
+    fechas de caducidad, compras y gestión de precios.
+  </p>
+</header>
+
+<main>
+
+  <section>
+    <h2>Descripción del Sistema</h2>
+    <div class="card">
+      <p>
+        Este sistema fue desarrollado tomando como base un POS inicial en PHP,
+        el cual fue reestructurado y ampliado para cubrir necesidades específicas
+        del rubro farmacéutico y de comercios mayoristas.
+      </p>
+      <p>
+        El enfoque principal estuvo en el control de fechas de vencimiento,
+        alertas preventivas, gestión de compras y actualización dinámica de precios.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Funcionalidades Implementadas</h2>
+    <div class="card">
+      <ul>
+        <li>Control de productos con fecha de caducidad</li>
+        <li>Alertas automáticas por vencimiento próximo</li>
+        <li>Registro de compras de productos</li>
+        <li>Reemplazo y actualización de precios desde compras</li>
+        <li>Edición de precios y productos (funcionalidad extendida)</li>
+        <li>Adaptación del sistema para farmacias</li>
+        <li>Configuración para tiendas mayoristas de abarrotes</li>
+        <li>Mejora en la impresión del ticket de venta</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cambios Visuales y Funcionales</h2>
+    <div class="gallery">
+
+      <div class="img-card">
+        <img src="assets/imgs/caducidad-alertas.png" alt="Alertas de caducidad">
+        <span>Alertas automáticas por fecha de caducidad de productos.</span>
+      </div>
+
+      <div class="img-card">
+        <img src="assets/imgs/compras-precios.png" alt="Compras y actualización de precios">
+        <span>Módulo de compras con actualización y reemplazo de precios.</span>
+      </div>
+
+      <div class="img-card">
+        <img src="assets/imgs/edicion-productos.png" alt="Edición de productos">
+        <span>Edición de productos y precios extendida.</span>
+      </div>
+
+      <div class="img-card">
+        <img src="assets/imgs/ticket-farmacia.png" alt="Ticket mejorado">
+        <span>Mejora en el formato del ticket de venta.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Tecnologías Utilizadas</h2>
+    <div class="card">
+      <ul>
+        <li>PHP</li>
+        <li>MySQL</li>
+        <li>JavaScript / jQuery</li>
+        <li>AJAX</li>
+        <li>HTML5 / CSS3</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 – Documentación de proyecto | Portafolio técnico
+</footer>
+
+</body>
+</html>
