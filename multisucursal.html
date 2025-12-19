@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sistema de Ventas Multisucursal</title>
+  <title>Sistema POS Multisucursal</title>
+
   <style>
     :root {
       --bg: #020617;
@@ -18,7 +19,7 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(120deg, #020617, #020617 50%, #020617);
+      background: var(--bg);
       color: var(--text);
     }
 
@@ -26,7 +27,6 @@
       padding: 3rem 1.5rem 2rem;
       max-width: 1100px;
       margin: auto;
-      animation: fadeDown 1s ease;
     }
 
     header h1 {
@@ -36,8 +36,8 @@
 
     header p {
       color: var(--muted);
+      max-width: 900px;
       font-size: 1.1rem;
-      max-width: 800px;
     }
 
     main {
@@ -46,15 +46,11 @@
       padding: 0 1.5rem 4rem;
     }
 
-    section {
-      margin-top: 3rem;
-      animation: fadeUp 1s ease forwards;
-    }
+    section { margin-top: 3rem; }
 
     h2 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
       color: var(--accent);
+      margin-bottom: 1rem;
     }
 
     .card {
@@ -69,9 +65,7 @@
       line-height: 1.6;
     }
 
-    ul {
-      padding-left: 1.2rem;
-    }
+    ul { padding-left: 1.2rem; }
 
     .gallery {
       display: grid;
@@ -85,13 +79,12 @@
       border-radius: 1rem;
       overflow: hidden;
       box-shadow: 0 15px 30px rgba(0,0,0,.4);
-      transform: translateY(20px);
-      opacity: 0;
-      animation: fadeUp .8s ease forwards;
     }
 
     .img-card img {
       width: 100%;
+      height: 180px;
+      object-fit: cover;
       display: block;
     }
 
@@ -100,7 +93,18 @@
       padding: .8rem 1rem;
       font-size: .9rem;
       color: var(--muted);
-      background: #020617;
+    }
+
+    .links {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
     }
 
     footer {
@@ -109,24 +113,15 @@
       color: var(--muted);
       font-size: .9rem;
     }
-
-    @keyframes fadeUp {
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes fadeDown {
-      from { transform: translateY(-20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Sistema de Ventas Multisucursal con Tienda Virtual</h1>
+  <h1>Sistema POS Multisucursal</h1>
   <p>
-    Sistema web orientado a pequeñas y medianas empresas para la gestión de ventas,
-    almacén y clientes, extendido y adaptado a múltiples sucursales y venta online.
+    Sistema de ventas y control interno adaptado y extendido para soportar
+    múltiples sucursales, ventas por mayor, crédito y personalización de tickets.
   </p>
 </header>
 
@@ -136,10 +131,9 @@
     <h2>Descripción General</h2>
     <div class="card">
       <p>
-        Este sistema fue desarrollado a partir de una base inicial en PHP,
-        la cual fue modificada y ampliada para cubrir nuevos escenarios de negocio.
-        El enfoque principal fue mejorar la flexibilidad del sistema,
-        permitiendo operar múltiples sucursales y distintos tipos de venta.
+        Este sistema POS fue adaptado y mejorado a partir de una base existente,
+        incorporando funcionalidades críticas para entornos comerciales reales,
+        como ventas al crédito, precios diferenciados y control por sucursal.
       </p>
     </div>
   </section>
@@ -148,73 +142,55 @@
     <h2>Funcionalidades Implementadas</h2>
     <div class="card">
       <ul>
-        <li>Gestión de ventas por sucursal</li>
-        <li>Precios diferenciados: por menor y por mayor</li>
-        <li>Ventas al contado y ventas al crédito</li>
-        <li>Módulo de tienda virtual</li>
-        <li>Registro de notas personalizadas por venta</li>
-        <li>Edición, eliminación y visualización de registros</li>
-        <li>Rediseño completo del ticket de venta</li>
-        <li>Mejoras en interfaz y experiencia de usuario</li>
+        <li>Gestión de múltiples sucursales</li>
+        <li>Precios por mayor y por menor</li>
+        <li>Ventas al contado y crédito</li>
+        <li>Edición y eliminación de ventas</li>
+        <li>Notas y observaciones por venta</li>
+        <li>Rediseño profesional del ticket</li>
       </ul>
     </div>
   </section>
 
   <section>
-    <h2>Cambios Visuales y Mejoras</h2>
-     
-      <div class="gallery">
-       <div class="img-card">
-          <img src="assets/imgs/aspecto.png" alt="Venta por mayor y menor">
-        <span>Cambio de aspecto.</span>
-      </div>
-       
-      <div class="gallery">
-       <div class="img-card">
-          <img src="assets/imgs/venta-mayor-menor.png" alt="Venta por mayor y menor">
-        <span>Mejoras Visuales.</span>
-      </div>
-        
+    <h2>Evidencia Visual</h2>
+    <div class="gallery">
+
       <div class="img-card">
-        <img src="assets/imgs/venta-mayor-menor.png" alt="Venta por mayor y menor">
-        <span>Implementación de precios diferenciados (mayor y menor).</span>
+        <img src="assets/previews/multi-precio.png" alt="Precio mayor menor">
+        <span>Selección de precios por mayor y menor.</span>
       </div>
 
       <div class="img-card">
-        <img src="assets/imgs/tienda-virtual.png" alt="Tienda virtual">
-        <span>Módulo de tienda virtual integrado al sistema.</span>
+        <img src="assets/previews/multi-credito.png" alt="Crédito">
+        <span>Registro de ventas al crédito y seguimiento.</span>
       </div>
 
       <div class="img-card">
-        <img src="assets/imgs/credito-contado.png" alt="Ventas al crédito y contado">
-        <span>Soporte para ventas al crédito y al contado.</span>
-      </div>
-
-      <div class="img-card">
-        <img src="assets/imgs/ticket.png" alt="Ticket profesional">
-        <span>Rediseño del ticket de venta con formato profesional.</span>
+        <img src="assets/previews/multi-ticket.png" alt="Ticket">
+        <span>Ticket de venta rediseñado.</span>
       </div>
 
     </div>
   </section>
 
   <section>
-    <h2>Tecnologías Utilizadas</h2>
+    <h2>Código</h2>
     <div class="card">
-      <ul>
-        <li>PHP</li>
-        <li>MySQL</li>
-        <li>jQuery</li>
-        <li>AJAX</li>
-        <li>HTML5 / CSS3</li>
-      </ul>
+      <p>
+        Por motivos de confidencialidad, solo se muestra código parcial y
+        representativo del funcionamiento interno del sistema.
+      </p>
+      <div class="links">
+        <a href="codigomultisucursal.html">Ver código y funcionamiento</a>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  © 2026 – Documentación de proyecto | Portafolio técnico
+  © 2026 – Sistema POS Multisucursal | Portafolio técnico
 </footer>
 
 </body>
