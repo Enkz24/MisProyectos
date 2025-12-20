@@ -223,7 +223,22 @@ public function getExpiringProducts($days = 30) {
 public function updatePurchase($id, $data = NULL, $items = array()) {
     $purchase = $this->getPurchaseByID($id);
     if (!$purchase) return false;
+    $totalItems = 0;
+    foreach ($items as $item) {
+        $totalItems += $item['quantity'];
     }
+    $precioBase = $data['total'];
+    if ($totalItems >= 12) { 
+        // MAYORISTA: Descuento del 10% (Multiplicar por 0.90)
+        $data['total'] = $precioBase * 0.90;
+        $data['sale_type'] = 'mayorista'; 
+    } else {
+        // MINORISTA: Descuento del 5% (Multiplicar por 0.95)
+        $data['total'] = $precioBase * 0.95;
+        $data['sale_type'] = 'minorista';
+    }
+    // return $this->db->update('purchases', $data, array('id' => $id));
+}
 </code></pre>
       </div>
 
