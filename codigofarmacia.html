@@ -144,8 +144,24 @@
 
       <div class="code-card">
 <pre><code>// Validación de vencimiento
-if (producto.fecha_vencimiento &lt; hoy) {
-  producto.estado = 'VENCIDO';
+function expiryDate(d) {
+    if (!d) return '<span class="label label-default">—</span>';
+    const today = new Date();
+    const expiry = new Date(d);
+    const diffDays = Math.ceil((expiry - today) / (1000 * 60 * 60 * 24));
+    if (diffDays < 0) {
+        // Producto vencido
+        return '<span class="label label-danger">' + d + ' (Vencido)</span>';
+    } else if (diffDays <= 7) {
+        // Menos de una semana
+        return '<span class="label label-danger">' + d + ' (' + diffDays + ' días)</span>';
+    } else if (diffDays <= 30) {
+        // Menos de un mes
+        return '<span class="label label-warning">' + d + ' (' + diffDays + ' días)</span>';
+    } else {
+        // Más de un mes
+        return '<span class="label label-success">' + d + '</span>';
+    }
 }
 </code></pre>
       </div>
@@ -169,8 +185,18 @@ if (producto.fecha_vencimiento &lt; hoy) {
 
       <div class="code-card">
 <pre><code>// Alerta de productos por vencer
-if (dias_restantes &lt;= 30) {
-  alertas.push(producto);
+public function getExpiringProducts($days = 30) {
+    $today = date('Y-m-d');
+    $limit = date('Y-m-d', strtotime("+$days days"));
+    $this->db->select('id, code, name, expiry_date');
+    $this->db->where('expiry_date >=', $today);
+    $this->db->where('expiry_date <=', $limit);
+    $this->db->order_by('expiry_date', 'ASC');
+    $q = $this->db->get('products');
+    if ($q->num_rows() > 0) {
+        return $q->result();
+    }
+    return [];
 }
 </code></pre>
       </div>
@@ -193,10 +219,11 @@ if (dias_restantes &lt;= 30) {
     <div class="block">
 
       <div class="code-card">
-<pre><code>// Selección de precio
-precio = cantidad >= minimo_mayorista
-  ? precio_mayor
-  : precio_unitario;
+<pre><code>
+public function updatePurchase($id, $data = NULL, $items = array()) {
+    $purchase = $this->getPurchaseByID($id);
+    if (!$purchase) return false;
+    }
 </code></pre>
       </div>
 
@@ -219,8 +246,11 @@ precio = cantidad >= minimo_mayorista
 
       <div class="code-card">
 <pre><code>// Actualización de precio por compra
-producto.precio = nuevo_precio;
-producto.costo = costo_compra;
+ $this->db->update('products', [
+            'cost'  => $item['cost'],
+            'price' => $item['price']
+        ], ['id' => $item['product_id']]);
+
 </code></pre>
       </div>
 
